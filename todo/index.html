@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1>Meu gerenciador de tarefas</h1>
+
+    <div class="todo-app">
+        <div class="todo-input">
+            <input autofocus type="text" id="nova-tarefa" onkeypress="pressionarTecla()">
+            <button onclick="adicionarTarefa()">Adicionar</button>
+        </div>
+        
+        <ul class="todo-list">
+        </ul>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
