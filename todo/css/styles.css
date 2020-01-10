@@ -20,7 +20,6 @@ body{
 .todo-list{
     background: #fff;
     list-style: none;
-    margin-left: 50px;
 }
 
 .todo-list li {
@@ -39,4 +38,23 @@ body{
 
 .todo-list input[type="checkbox"] {
     margin-right: 10px;
+}
+
+.counters{
+    text-align: left;
+    background: #fff;
+}
+
+.counters div{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.counters .label {
+    flex: 1;
+}
+
+.counters span {
+    flex: 3;
 }
