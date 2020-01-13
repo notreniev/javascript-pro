@@ -89,13 +89,17 @@ function atualizarContadores() {
     document.querySelector('#counter-pending').innerText = toDoList.length - totalCompletos
 }
 
-function exibirTarefas() {
+function exibirTarefas(listaTarefas) {
     document.querySelector('ul').innerHTML = ''
 
-    for (var task of toDoList) {
+    if (!listaTarefas) {
+        listaTarefas = toDoList
+    }
+
+    for (var task of listaTarefas) {
         var checkbox = document.createElement('input')
         checkbox.type = 'checkbox'
-        if (task.complete == true){
+        if (task.complete == true) {
             checkbox.checked = true
         }
         checkbox.onclick = completarTarefas
@@ -117,7 +121,7 @@ function exibirTarefas() {
     }
 }
 
-function completarTarefas(){
+function completarTarefas() {
     var tarefaId = event.target.parentElement.dataset.id
     var posicao = toDoList.findIndex(function (tarefa) {
         return tarefa.id == tarefaId
@@ -137,3 +141,27 @@ function carregarTarefas() {
 }
 
 carregarTarefas()
+
+function filtrarPor(filtro) {
+    //console.log(filtro)
+    switch (filtro) {
+        case 'todos':
+            exibirTarefas()
+            break;
+        case 'completos':
+            var tarefasCompletas = toDoList.filter(function(tarefa){
+                return tarefa.complete
+            })
+            console.table(tarefasCompletas)
+            exibirTarefas(tarefasCompletas)
+            break;
+        case 'pendentes':
+            var tarefasPendentes = toDoList.filter(function(tarefa){
+                return !tarefa.complete
+            })
+            console.table(tarefasPendentes)
+            exibirTarefas(tarefasPendentes)
+            break;
+    }
+
+}
