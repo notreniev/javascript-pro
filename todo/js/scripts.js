@@ -149,14 +149,14 @@ function filtrarPor(filtro) {
             exibirTarefas()
             break;
         case 'completos':
-            var tarefasCompletas = toDoList.filter(function(tarefa){
+            var tarefasCompletas = toDoList.filter(function (tarefa) {
                 return tarefa.complete
             })
             console.table(tarefasCompletas)
             exibirTarefas(tarefasCompletas)
             break;
         case 'pendentes':
-            var tarefasPendentes = toDoList.filter(function(tarefa){
+            var tarefasPendentes = toDoList.filter(function (tarefa) {
                 return !tarefa.complete
             })
             console.table(tarefasPendentes)
