@@ -4,8 +4,13 @@
   "description": "Curso de JavaScript PRO",
   "main": "index.js",
   "scripts": {
-    "build": "browserify src/js/index.js -o src/js/bundle.js"
+    "build": "browserify src/js/index.js -o src/js/bundle.js",
+    "lint": "standard src/**/*.js --fix"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^16.5.0",
+    "standard": "^14.3.1"
+  }
 }
