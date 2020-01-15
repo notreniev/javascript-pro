@@ -14,12 +14,15 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    min-height: 100vh;
+    flex: 1 0 auto;
 }
 .container > main {
     flex-grow: 1;
     flex-direction: row;
     display: flex;
+    min-height: 100vh;
+    flex: 2 1 1;
 }
 .container > main aside {
     background: lightgray;
@@ -30,7 +33,7 @@ header{
 main > main {
     background: #fff;
     padding: 10px 20px;
-    flex: 7;
+    flex: 4;
 }
 aside li {
     padding: 4px;
