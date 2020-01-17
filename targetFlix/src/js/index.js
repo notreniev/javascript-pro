@@ -16,8 +16,8 @@ const movieList = [
 
 for (const movie of movieList) {
     const card = new MovieCard(movie)
-    const html = card.render()
+    const cardRendered = card.render()
     
-    document.querySelector('.movies').innerHTML += html
+    document.querySelector('.movies').appendChild(cardRendered)
 }
     

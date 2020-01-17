@@ -1,5 +1,4 @@
 class MovieCard {
-
   constructor ({ title, description, img }) {
     this.title = title
     this.description = description
@@ -8,15 +7,18 @@ class MovieCard {
 
   render () {
     const article = document.createElement('article')
+    article.className = 'movie'
+    article.style.backgroundImage = `url('${this.img}')`
+
     const h1 = document.createElement('h1')
+    h1.innerText = this.title
+    article.appendChild(h1)
+
     const p = document.createElement('p')
-    
-    return `
-        <article class="movie" style="background-image: url('${this.img}')" title="${this.title}">
-            <h1>${this.title}</h1>
-            <p>${this.description}</p>
-        </article>
-    `
+    p.innerText = this.description
+    article.appendChild(p)
+
+    return article
   }
 }
 module.exports = MovieCard
