@@ -21,4 +21,5 @@ class MovieCard {
     return article
   }
 }
+
 module.exports = MovieCard
