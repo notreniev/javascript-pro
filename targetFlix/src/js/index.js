@@ -1,23 +1,18 @@
-console.log('olá!')
-const MovieCard = require('./components/MovieCard')
+const Api = require('./services/api')
+const Category = require('./components/category/Category')
 
-const movieList = [
-    {
-        title: 'Mindhunter',
-        description: 'Boa série',
-        img: 'https://i.ytimg.com/vi/PHlJQCyqiaI/maxresdefault.jpg'
-    },
-    {
-        title: 'Friends',
-        description: 'Outra série muito boa',
-        img: 'https://img.quizur.com/f/img5e1e00216c4873.55629946.jpg?lastEdited=1579024421'
-    }
-]
+const api = new Api()
 
-for (const movie of movieList) {
-    const card = new MovieCard(movie)
-    const cardRendered = card.render()
+api.getAsPromise('http://localhost:3001/api/categories')
+    .then(categories => {
+        console.table(categories)
+
+        for (const category of categories) {
+            const c = new Category(category)
+            const html = c.render()
     
-    document.querySelector('.movies').appendChild(cardRendered)
-}
+            document.querySelector('main').appendChild(html)
+        }
     
+    })
+    .catch(error => console.error(error))

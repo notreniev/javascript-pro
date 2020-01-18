@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack-dev-server",
+    "start": "webpack-dev-server",
     "lint": "standard src/**/*.js --fix"
   },
   "keywords": [],

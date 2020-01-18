@@ -31,8 +31,8 @@ header h1{
     padding: 10px;
     border: 1px solid #e9e9e9;
     margin-right: 10px;
-    height: 100px;
-    width: 130px;
+    height: 130px;
+    width: 160px;
     border-radius: 10px;
     transition: all .2s ease-in-out;
     background-size: 100% 100%;
@@ -40,4 +40,14 @@ header h1{
 .category .movies .movie:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+.movie-details {
+    width: 250px;
+    height: 100vh;
+    background: #fff;
+    color: #000;
+    position: fixed;
+    right: 0;
+    top: 0;
+
 }
