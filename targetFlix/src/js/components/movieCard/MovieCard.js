@@ -1,7 +1,7 @@
-const MovieDetails = require('../movieDetails/MovieDetails')
-const { html } = require('htm/preact')
+import MovieDetails from '../movieDetails/MovieDetails'
+import { html } from 'htm/preact'
 
-class MovieCard {
+export default class MovieCard {
   constructor ({ id, title, description, imageUrl: img }) {
     this.id = id
     this.title = title
@@ -42,4 +42,3 @@ class MovieCard {
   }
 }
 
-module.exports = MovieCard

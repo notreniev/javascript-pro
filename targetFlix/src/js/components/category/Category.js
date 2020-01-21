@@ -1,7 +1,7 @@
-const MovieCard = require('../movieCard/MovieCard')
-const { html } = require('htm/preact')
+import MovieCard from '../movieCard/MovieCard'
+import { html } from 'htm/preact'
 
-class Category {
+export default class Category {
   constructor ({ description: name, gender, movies } = {}) {
     this.name = name
     this.gender = gender
@@ -43,5 +43,3 @@ class Category {
     // return section
   }
 }
-
-module.exports = Category

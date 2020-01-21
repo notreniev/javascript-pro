@@ -1,4 +1,4 @@
-class Api {
+export default class Api {
     getAsPromise(url) {
         return new Promise((resolve, reject) => {
             const request = new window.XMLHttpRequest()
@@ -16,5 +16,3 @@ class Api {
         })
     }
 }
-
-module.exports = Api
