@@ -1,3 +1,4 @@
+const { html, render } = require('htm/preact')
 const Api = require('./../../services/api')
 
 class MovieDetails {
@@ -5,26 +6,25 @@ class MovieDetails {
         this.movieId = movieId
     }
     render() {
-        const oldMovieDetails = document.querySelector('main aside')
-        if (oldMovieDetails){
-            oldMovieDetails.remove()
-        }
         const api = new Api()
+
+        document.querySelector('aside#movie-details').innerHTML = ''
+
         api.getAsPromise(`http://localhost:3001/api/movies/${this.movieId}`)
             .then(movie => {
-                console.log(movie)
-                const html = `<aside class="movie-details">
+                const movieDetailsHtml = html`<aside class="movie-details">
+                                <h1>Detalhes do Filme</h1>
                                 <h2>${movie.title}</h2>
-                                <p>${movie.gender}</p>
+                                <p>Gênero: ${movie.gender}</p>
                               </aside>`
 
-                const h1 = document.createElement('h1')
-                h1.append('Detalhes do filme')
+                // const h1 = document.createElement('h1')
+                // h1.append('Detalhes do filme')
 
-                const aside = document.createElement('aside')
-                aside.appendChild(h1)
+                // const aside = document.createElement('aside')
+                // aside.appendChild(h1)
 
-                document.querySelector('main').appendChild(aside)
+                render(movieDetailsHtml, document.querySelector('aside#movie-details'))
             })
     }
 }
