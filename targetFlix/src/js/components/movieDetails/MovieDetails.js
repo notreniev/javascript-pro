@@ -14,8 +14,15 @@ class MovieDetails {
             .then(movie => {
                 const movieDetailsHtml = html`<aside class="movie-details">
                                 <h1>Detalhes do Filme</h1>
+                                <img src="${movie.imageUrl}" style="width:100%; height: 120px" />
                                 <h2>${movie.title}</h2>
+                                <p>Diretor: ${movie.director}</p>
                                 <p>Gênero: ${movie.gender}</p>
+                                <p>Avaliação: ${movie.rating}</p>
+                                <p>Classificação: ${movie.rate}</p>
+                                <br/>
+                                <p>Sinopse: ${movie.synopsis}</p>
+                                <p>Ano: ${movie.year}</p>
                               </aside>`
 
                 // const h1 = document.createElement('h1')
@@ -30,3 +37,4 @@ class MovieDetails {
 }
 
 module.exports = MovieDetails
+
