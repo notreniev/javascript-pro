@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Meu gerenciador de tarefas</h1>
+        <br>
+        <div class="todo-input">
+            <input autofocus type="text" id="nova-tarefa" onkeypress="pressionarTecla()" placeholder="Minha nova tarefa...">
+            <button onclick="adicionarTarefa()">Adicionar</button>
+        </div>
+
+        <div class="todo-app">
+            <ul class="todo-list">
+            </ul>
+
+            <div class="counters">
+                <div class="all">
+                    <div class="label">Total: </div>
+                    <span id="counter-total"></span>
+                </div>
+
+                <div class="finished">
+                    <div class="label">Completos: </div>
+                    <span id="counter-finished"></span>
+                </div>
+
+                <div class="pending">
+                    <div class="label">Pendentes: </div>
+                    <span id="counter-pending"></span>
+                </div>
+            </div>
+
+            <div class="filters">
+                <span>Filtrar por: </span>
+                <button onclick="filtrarPor('todos')">Todos</button>
+                <button onclick="filtrarPor('completos')">Completos</button>
+                <button onclick="filtrarPor('pendentes')">Pendentes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

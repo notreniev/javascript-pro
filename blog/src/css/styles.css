@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header{
+    background: darkgray;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    flex: 1 0 auto;
+}
+.container > main {
+    flex-grow: 1;
+    flex-direction: row;
+    display: flex;
+    min-height: 100vh;
+    flex: 2 1 1;
+}
+.container > main aside {
+    background: lightgray;
+    padding: 10px 20px;
+    width: 20%;
+    flex: 1;
+}
+main > main {
+    background: #fff;
+    padding: 10px 20px;
+    flex: 4;
+}
+aside li {
+    padding: 4px;
+    border-bottom: solid 1px #999;
+}
+h1{
+    font-size: 16pt;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+aside ul{
+    list-style-type: circle;
+}
+ul {
+    list-style-type: none;
+}
+hr{
+    border-color: #f0f0f0;
+}
+section h2 {
+    font-size: 12pt;
+}
+.comments{
+    padding-top: 20px;
+}
+.comments li{
+    padding: 20px 0px;
+    border-bottom: solid 1px lightgray;
+}
+footer{
+    background: darkgray;
+    font-size: 12px;
+    padding: 20px;
+}
+a:link, a:visited{
+    text-decoration: none;
+    color: darkblue;
+}
+a:hover{
+    color: darkslategray;
+}
+input {
+    padding: 4px;
+}
+textarea{
+    width: 100%;
+}
